@@ -113,15 +113,8 @@ class MovieSessionViewSet(viewsets.ModelViewSet):
         return queryset
 
 
-class StandardResultsSetPagination(PageNumberPagination):
-    page_size = 3
-    page_size_query_param = "page_size"
-    max_page_size = 20
-
-
 class OrderViewSet(viewsets.ModelViewSet):
     queryset = Order.objects.all()
-    pagination_class = StandardResultsSetPagination
 
     def get_queryset(self):
 
